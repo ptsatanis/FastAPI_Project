@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>Questionnaire</title>
+
+<link rel="stylesheet" href="/static/style.css">
+
+
+</head>
+
+<body>
+
+
+<div class="container">
+
+    <!-- ================================================= -->
+    <!-- QUESTIONNAIRE -->
+    <!-- ================================================= -->
+
+    <div id="questionnaire">
+
+        <h1>
+            Questionnaire
+        </h1>
+
+        <p class="description">
+            Please answer each question with
+            <strong>Yes</strong> or <strong>No</strong>.
+        </p>
+
+        <div class="progress-container">
+
+            <div class="progress-text">
+
+                <span id="questionNumber">
+                    Question 1 of 15
+                </span>
+
+                <span id="percentage">
+                    7%
+                </span>
+
+            </div>
+
+            <div class="progress-bar">
+
+                <div
+                    class="progress"
+                    id="progress"
+                ></div>
+
+            </div>
+
+        </div>
+
+        <div
+            class="question"
+            id="question"
+        ></div>
+
+        <div class="answers">
+
+            <button
+                class="yes"
+                id="yesButton"
+            >
+                Yes
+            </button>
+
+            <button
+                class="no"
+                id="noButton"
+            >
+                No
+            </button>
+
+        </div>
+
+        <div class="disclaimer">
+            This questionnaire is for informational purposes only and is not a medical diagnosis.
+            It should not replace advice, evaluation, or treatment from a qualified healthcare professional.
+        </div>
+
+        <div
+            class="loading"
+            id="loading"
+        >
+            Processing your answers...
+        </div>
+
+    </div>
+
+
+    <!-- ================================================= -->
+    <!-- RESULT -->
+    <!-- ================================================= -->
+
+    <div
+        class="result"
+        id="result"
+    >
+
+        <h2>
+            Prediction Result
+        </h2>
+
+        <div class="result-box">
+
+            <div
+                class="prediction"
+                id="prediction"
+            ></div>
+
+            <div
+                class="probability"
+                id="probability"
+            ></div>
+
+        </div>
+
+        <button
+            class="restart"
+            id="restartButton"
+        >
+            Start Again
+        </button>
+
+    </div>
+
+</div>
+
+<script src="/static/script.js"></script>
+
+
+</body>
+
+</html>
