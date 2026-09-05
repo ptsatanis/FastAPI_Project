@@ -18,12 +18,16 @@ The answers are submitted to a FastAPI API, converted into numerical values, and
 The pipeline consists of:
 
 Input Data
+
     ↓
 SelectKBest Feature Selection
+
     ↓
 SMOTE Class Balancing
+
     ↓
 XGBoost Classifier
+
     ↓
 Prediction + Probability
 
@@ -32,12 +36,16 @@ Prediction + Probability
 # Application Architecture
 
 Input Data
+
     ↓
 SelectKBest Feature Selection
+
     ↓
 SMOTE Class Balancing
+
     ↓
 XGBoost Classifier
+
     ↓
 Prediction + Probability
 
@@ -47,19 +55,33 @@ Prediction + Probability
 # Feature descriptions
 Feature	Description
 ENVSAT	Satisfaction with living conditions
+
 POSSAT	Satisfaction with working conditions
+
 FINSTR	Financial struggles
+
 DEBT	Debt
+
 EATDIS	Eating disorder
+
 INSOM	Insomnia
+
 ANXI	Anxiety
+
 DEPRI	Feelings of deprivation
+
 ABUSED	Experience of abuse
+
 CHEAT	Being cheated on
+
 THREAT	Experience of a threatening situation
+
 SUICIDE	Suicidal ideation
+
 INFER	Feelings of inferiority
-CONFLICT	Conflict with friends or family
+
+CONFLICT  Conflict with friends or family
+
 LOST	Loss of a family member or close friend
 
 
