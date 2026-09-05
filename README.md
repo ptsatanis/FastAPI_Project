@@ -23,10 +23,19 @@ The project combines machine learning, FastAPI, JavaScript, HTML, and CSS into a
 
 🖥️ Application Architecture
 
+
+
 The application follows a simple client-server architecture. Users interact with the questionnaire through the frontend, while the FastAPI backend handles preprocessing and model inference.
 
-POST /predict👤 User🌐 Web Interface⚡ FastAPI🔢 Encode Answers🤖 ML Pipeline📊 Prediction
-Request Flow
+# POST /predict
+👤 User
+🌐 Web Interface
+⚡ FastAPI
+🔢 Encode Answers
+🤖 ML Pipeline
+📊 Prediction
+
+# Request Flow
 The user answers the 15 questionnaire questions.
 The JavaScript frontend collects the responses.
 The responses are sent to the /predict endpoint.
