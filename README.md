@@ -240,6 +240,7 @@ The frontend converts the prediction into:
 The model probability is displayed as a percentage on the results screen.
 
 🗂️ Project Structure
+
 depression-prediction/
 │
 ├── main.py
