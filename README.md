@@ -242,17 +242,16 @@ The model probability is displayed as a percentage on the results screen.
 🗂️ Project Structure
 
 depression-prediction/
-│
 ├── main.py
 ├── index.html
 ├── style.css
 ├── script.js
-│
 ├── xgb_depression_pipeline.joblib
 ├── Depression Dataset.csv
 ├── model_training.ipynb
-│
 └── README.md
+
+
 
 File	Description
 main.py	FastAPI backend and prediction API
