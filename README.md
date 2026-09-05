@@ -21,87 +21,52 @@ The project combines machine learning, FastAPI, JavaScript, HTML, and CSS into a
     🔄 Restart questionnaire functionality
     📦 Serialized model pipeline using Joblib
 
-🖥️ Application Overview
+🖥️ Application Architecture
 
-The application allows a user to answer a series of 15 questions. Once the questionnaire is completed, the answers are sent to the FastAPI backend, processed, and passed through the trained machine learning pipeline.
+The application follows a simple client-server architecture. Users interact with the questionnaire through the frontend, while the FastAPI backend handles preprocessing and model inference.
 
-┌──────────────────────────────┐
-│          USER                │
-│      Answers Questions       │
-└──────────────┬───────────────┘
-               │
-               ▼
-┌──────────────────────────────┐
-│          FRONTEND            │
-│       HTML / CSS / JS        │
-└──────────────┬───────────────┘
-               │
-               │ POST /predict
-               ▼
-┌──────────────────────────────┐
-│          FASTAPI             │
-│           Backend            │
-└──────────────┬───────────────┘
-               │
-               ▼
-┌──────────────────────────────┐
-│      INPUT PROCESSING        │
-│       Yes → 1 / No → 0       │
-└──────────────┬───────────────┘
-               │
-               ▼
-┌──────────────────────────────┐
-│      MACHINE LEARNING        │
-│                              │
-│       SelectKBest            │
-│            ↓                 │
-│           SMOTE              │
-│            ↓                 │
-│       XGBoost Classifier     │
-└──────────────┬───────────────┘
-               │
-               ▼
-┌──────────────────────────────┐
-│     PREDICTION + PROBABILITY │
-└──────────────┬───────────────┘
-               │
-               ▼
-┌──────────────────────────────┐
-│       RESULT DISPLAY         │
-└──────────────────────────────┘
-
+POST /predict👤 User🌐 Web Interface⚡ FastAPI🔢 Encode Answers🤖 ML Pipeline📊 Prediction
+Request Flow
+The user answers the 15 questionnaire questions.
+The JavaScript frontend collects the responses.
+The responses are sent to the /predict endpoint.
+FastAPI converts Yes/No answers into numerical values.
+The processed data is passed to the trained machine learning pipeline.
+The model returns a prediction and probability.
+The result is displayed on the frontend.
 🧠 Machine Learning Pipeline
 
-The final model is implemented as a pipeline containing three main stages:
+The trained model is packaged as a single pipeline containing feature selection, class balancing, and XGBoost classification.
 
-Input Features
-      │
-      ▼
-┌───────────────────┐
-│    SelectKBest    │
-│   Feature Select. │
-└─────────┬─────────┘
-          │
-          ▼
-┌───────────────────┐
-│       SMOTE       │
-│ Class Balancing   │
-└─────────┬─────────┘
-          │
-          ▼
-┌───────────────────┐
-│      XGBoost      │
-│    Classifier     │
-└─────────┬─────────┘
-          │
-          ▼
-     Prediction
+flowchart TD
+    A[📥 Questionnaire Features] --> B[🎯 SelectKBest]
+    B --> C[⚖️ SMOTE]
+    C --> D[🌳 XGBoost Classifier]
+    D --> E[📊 Prediction + Probability]
 
-The complete trained pipeline is saved as:
+    B:::blue
+    C:::orange
+    D:::green
+    E:::purple
+
+    classDef blue fill:#dbeafe,stroke:#2563eb,color:#1e3a8a
+    classDef orange fill:#ffedd5,stroke:#ea580c,color:#9a3412
+    classDef green fill:#dcfce7,stroke:#16a34a,color:#166534
+    classDef purple fill:#f3e8ff,stroke:#9333ea,color:#6b21a8
+
+Pipeline Components
+Stage	Purpose
+SelectKBest	Selects the most relevant features using the ANOVA F-test
+SMOTE	Balances the training classes using synthetic oversampling
+XGBoost	Performs the final binary classification
+Prediction	Returns the predicted class and probability
+
+The complete pipeline is serialized with Joblib:
 
 xgb_depression_pipeline.joblib
 
-This allows the exact preprocessing and classification pipeline to be loaded by the FastAPI backend.
+
+This allows the same preprocessing and model steps used during training to be loaded directly by the FastAPI backend.
 📋 Questionnaire Features
 
 The model uses the following 15 features:
