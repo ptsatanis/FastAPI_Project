@@ -205,19 +205,33 @@ Example Request
 
 {
   "ENVSAT": "Yes",
+  
   "POSSAT": "No",
+  
   "FINSTR": "Yes",
+  
   "DEBT": "No",
+  
   "EATDIS": "No",
+  
   "INSOM": "Yes",
+  
   "ANXI": "Yes",
+  
   "DEPRI": "No",
+  
   "ABUSED": "No",
+  
   "CHEAT": "No",
+  
   "THREAT": "No",
+  
   "SUICIDE": "No",
+  
   "INFER": "Yes",
+  
   "CONFLICT": "No",
+  
   "LOST": "No"
 }
 
