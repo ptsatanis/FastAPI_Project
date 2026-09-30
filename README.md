@@ -28,12 +28,8 @@ The project combines machine learning, FastAPI, JavaScript, HTML, and CSS into a
 The application follows a simple client-server architecture. Users interact with the questionnaire through the frontend, while the FastAPI backend handles preprocessing and model inference.
 
 # POST /predict
-👤 User
-🌐 Web Interface
-⚡ FastAPI
-🔢 Encode Answers
-🤖 ML Pipeline
-📊 Prediction
+👤 User → 🌐 Web Interface → ⚡ FastAPI → 🔢 Encode Answers → 🤖 ML Pipeline → 📊 Prediction
+
 
 # Request Flow
 The user answers the 15 questionnaire questions.
@@ -62,6 +58,7 @@ flowchart TD
     classDef orange fill:#ffedd5,stroke:#ea580c,color:#9a3412
     classDef green fill:#dcfce7,stroke:#16a34a,color:#166534
     classDef purple fill:#f3e8ff,stroke:#9333ea,color:#6b21a8
+
 
 Pipeline Components
 Stage	Purpose
@@ -255,13 +252,12 @@ depression-prediction/
 
 File Description
 
-main.py	FastAPI backend and prediction API
-index.html	Questionnaire and results interface
-style.css	Frontend styling
-script.js	Questionnaire logic and API communication
-xgb_depression_pipeline.joblib	Trained XGBoost machine learning pipeline
-Depression Dataset.csv	Dataset used for model training
-model_training.ipynb	Jupyter Notebook containing the model training and evaluation process
-README.md	Project documentation
-└── 📖 README.md
-
+depression-prediction/
+├── main.py
+├── index.html
+├── style.css
+├── script.js
+├── xgb_depression_pipeline.joblib
+├── Depression Dataset.csv
+├── model_training.ipynb
+└── README.md
