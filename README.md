@@ -44,10 +44,11 @@ The result is displayed on the frontend.
 The trained model is packaged as a single pipeline containing feature selection, class balancing, and XGBoost classification.
 
 flowchart TD
-    A[📥 Questionnaire Features] --> B[🎯 SelectKBest]
-    B --> C[⚖️ SMOTE]
-    C --> D[🌳 XGBoost Classifier]
-    D --> E[📊 Prediction + Probability]
+    [📥 Questionnaire Features] --> 
+	[🎯 SelectKBest] --> 
+	[⚖️ SMOTE] --> 
+	[🌳 XGBoost Classifier] --> 
+	[📊 Prediction + Probability]
 
     B:::blue
     C:::orange
@@ -267,11 +268,20 @@ depression-prediction/
 File Description
 
 depression-prediction/
+
 ├── main.py
+
 ├── index.html
+
 ├── style.css
+
 ├── script.js
+
 ├── xgb_depression_pipeline.joblib
+
 ├── Depression Dataset.csv
+
 ├── model_training.ipynb
+
 └── README.md
+
